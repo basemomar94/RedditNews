@@ -44,4 +44,5 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
     implementation(project(":data"))
+    implementation(project(":domain"))
 }
