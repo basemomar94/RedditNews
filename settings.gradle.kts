@@ -26,4 +26,8 @@ include(":data")
 include(":presentation")
 include(":core:base")
 include(":core:designsystem")
+include(":core:di")
+include(":core:navigation")
+
+
  
