@@ -37,8 +37,11 @@ android {
 dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.hilt.android)
-
+    implementation(libs.retrofit2)
+    implementation(libs.okhttp3.logging.interceptor)
+    implementation(libs.retrofit2.converter.gson)
     testImplementation(libs.junit.jupiter.params)
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
+    implementation(project(":data"))
 }
