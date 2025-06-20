@@ -25,6 +25,6 @@ android {
 
 dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.junit.jupiter.params)
+    testImplementation(libs.junit.jupiter.params)
     testImplementation(libs.mockk)
 }
