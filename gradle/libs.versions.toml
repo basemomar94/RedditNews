@@ -1,7 +1,7 @@
 [versions]
-compileSdk = "35"
+compileSdk = "36"
 minSdk = "31"
-targetSdk = "35"
+targetSdk = "36"
 agp = "8.10.1"
 androidGradlePlugin = "8.4.2"
 gradle-versions = "0.51.0"
@@ -27,6 +27,7 @@ mockkVersion = "1.13.5"
 appcompat = "1.7.1"
 uiTestJunit4Android = "1.8.2"
 compose = "2024.01.00"
+navigation3 = "1.0.0-alpha04"
 
 
 
@@ -60,6 +61,8 @@ mockk = { module = "io.mockk:mockk", version.ref = "mockkVersion" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-ui-test-junit4-android = { group = "androidx.compose.ui", name = "ui-test-junit4-android", version.ref = "uiTestJunit4Android" }
+androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
 
 [bundles]
 compose = [
@@ -78,9 +81,14 @@ uiTest = [
     "androidx-compose-ui-test-junit4"
 ]
 
-viewModel=[
+viewModel = [
     "androidx-lifecycle-viewmodel-compose",
     "androidx-lifecycle-runtime-compose"
+]
+
+navigation3 = [
+    "androidx-navigation3-runtime",
+    "androidx-navigation3-ui"
 ]
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

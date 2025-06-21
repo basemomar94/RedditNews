@@ -8,7 +8,7 @@ android {
     namespace = "com.bassem.navigation"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
-    defaultConfig{
+    defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         minSdk = libs.versions.minSdk.get().toInt()
     }
@@ -37,8 +37,6 @@ android {
 dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.hilt.android)
-
-    testImplementation(libs.junit.jupiter.params)
-    testImplementation(libs.mockk)
-    testImplementation(libs.kotlinx.coroutines.test)
+    implementation(libs.bundles.navigation3)
+    implementation(project(":presentation"))
 }

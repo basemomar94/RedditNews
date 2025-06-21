@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "com.bassem.redditnews"
-    compileSdk = 35
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.bassem.redditnews"
         minSdk = 31
-        targetSdk = 35
+        targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -45,6 +45,8 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":presentation"))
+    implementation(project(":core:navigation"))
+
 
     implementation(libs.androidx.appcompat)
     ksp(libs.hilt.android.compiler)
