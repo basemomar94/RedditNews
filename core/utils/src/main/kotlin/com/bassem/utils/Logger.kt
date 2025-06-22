@@ -1,8 +1,20 @@
 package com.bassem.utils
 
-interface Logger {
+import android.util.Log
 
-    fun d(message: String)
-    fun i(message: String)
-    fun e( message: String)
+class Logger(private val tag: String) {
+
+    fun d(message: String) {
+        Log.d(tag, message)
+    }
+
+    fun i(message: String) {
+        Log.i(tag, message)
+    }
+
+    fun e(message: String) {
+        Log.e(tag, message)
+    }
+
+
 }

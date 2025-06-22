@@ -27,6 +27,7 @@ android {
 
 dependencies {
     implementation(project(":core:base"))
+    implementation(project(":core:utils"))
     implementation(project(":domain"))
     implementation(libs.retrofit2)
     implementation(libs.hilt.android)
