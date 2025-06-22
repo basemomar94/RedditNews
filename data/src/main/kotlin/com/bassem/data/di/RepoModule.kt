@@ -1,4 +1,4 @@
-package com.bassem.di
+package com.bassem.data.di
 
 import com.bassem.data.repoimp.GetRepoPostsImp
 import com.bassem.redditnews.domain.repo.GetPostsRepo

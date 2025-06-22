@@ -1,4 +1,4 @@
-package com.bassem.di
+package com.bassem.redditnews.domain.di
 
 import com.bassem.redditnews.domain.repo.GetPostsRepo
 import com.bassem.redditnews.domain.usecase.FetchPostsUseCase
