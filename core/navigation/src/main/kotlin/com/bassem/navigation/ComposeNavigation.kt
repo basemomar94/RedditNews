@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.ui.NavDisplay
 import com.bassem.presentation.screens.PostDetailsScreen
-import com.bassem.presentation.screens.PostsScreen
+import com.bassem.presentation.screens.posts.PostsScreen
 
 @Composable
 fun NavigationC(modifier: Modifier = Modifier) {

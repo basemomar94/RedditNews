@@ -2,7 +2,7 @@ package com.bassem.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bassem.mapper.toUi
+import com.bassem.presentation.mapper.toUi
 import com.bassem.redditnews.domain.usecase.FetchPostsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow

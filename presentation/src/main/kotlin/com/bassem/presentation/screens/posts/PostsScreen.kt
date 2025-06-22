@@ -1,4 +1,4 @@
-package com.bassem.presentation.screens
+package com.bassem.presentation.screens.posts
 
 import android.widget.Toast
 import androidx.compose.material3.Text
@@ -9,6 +9,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.bassem.presentation.PostsState
 import com.bassem.presentation.PostsViewModel
 import com.bassem.presentation.models.RedditPost
+import com.bassem.presentation.screens.posts.compose.RedditPostList
 
 
 @Composable
@@ -17,12 +18,10 @@ fun PostsScreen(viewModel: PostsViewModel = hiltViewModel(), onPostClick: (Reddi
     when (state) {
         is PostsState.Loading -> {}
         is PostsState.Success -> {
-            Toast.makeText(LocalContext.current, "Success ${state.posts.size}", Toast.LENGTH_SHORT)
-                .show()
+            RedditPostList(posts = state.posts, onPostClick = onPostClick)
         }
 
         is PostsState.Error -> {}
     }
-    Text(text = "Hello Screen")
 
 }

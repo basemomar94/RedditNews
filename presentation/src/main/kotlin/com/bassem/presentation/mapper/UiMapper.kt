@@ -1,4 +1,4 @@
-package com.bassem.mapper
+package com.bassem.presentation.mapper
 
 import com.bassem.redditnews.domain.models.RedditPost as DomainPost
 import com.bassem.presentation.models.RedditPost as UiPost
