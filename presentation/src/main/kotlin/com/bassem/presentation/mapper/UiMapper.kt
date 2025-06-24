@@ -12,11 +12,8 @@ fun DomainPost.toUi() = UiPost(
     ups = ups,
     downs = downs,
     createdAt = createdAt,
-    numOfComments = numOfComments,
     permalink = permalink,
     url = url,
-    isVideo = isVideo,
     thumbnail = thumbnail,
-    domain = domain,
     upvoteRatio = upvoteRatio
 )

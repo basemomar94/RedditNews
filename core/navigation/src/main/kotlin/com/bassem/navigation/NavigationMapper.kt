@@ -13,11 +13,8 @@ fun Screen.PostDetails.toUiModel(): RedditPost = RedditPost(
     ups = ups,
     downs = downs,
     createdAt = createdAt,
-    numOfComments = numOfComments,
     permalink = permalink,
-    isVideo = isVideo,
     upvoteRatio = upvoteRatio,
-    domain = domain
 )
 
 fun RedditPost.toNavigationModel(): Screen.PostDetails = Screen.PostDetails(
@@ -30,10 +27,7 @@ fun RedditPost.toNavigationModel(): Screen.PostDetails = Screen.PostDetails(
     downs = downs,
     score = score,
     createdAt = createdAt,
-    numOfComments = numOfComments,
     permalink = permalink,
-    isVideo = isVideo,
     thumbnail = thumbnail,
     upvoteRatio = upvoteRatio,
-    domain = domain
 )

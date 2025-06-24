@@ -10,10 +10,7 @@ data class RedditPost(
     val downs: Int?,
     val score: Int?,
     val createdAt: Long?,
-    val numOfComments: Int?,
     val permalink: String?,
-    val isVideo: Boolean?,
     val thumbnail: String?,
     val upvoteRatio: Double?,
-    val domain: String?
 )
