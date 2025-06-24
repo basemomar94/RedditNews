@@ -1,6 +1,12 @@
 package com.bassem.data.dto
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "reddit_posts")
 data class RedditPost(
+    @PrimaryKey(autoGenerate = true)
+    val dbId: Int,
     val id: String?,
     val title: String?,
     val selftext: String?,
@@ -16,5 +22,5 @@ data class RedditPost(
     val is_video: Boolean?,
     val thumbnail: String?,
     val upvote_ratio: Double?,
-    val domain: String?
+    val domain: String?,
 )

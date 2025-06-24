@@ -28,6 +28,7 @@ appcompat = "1.7.1"
 uiTestJunit4Android = "1.8.3"
 compose = "2024.01.00"
 navigation3 = "1.0.0-alpha04"
+room = "2.6.1"
 
 
 
@@ -63,7 +64,8 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 androidx-ui-test-junit4-android = { group = "androidx.compose.ui", name = "ui-test-junit4-android", version.ref = "uiTestJunit4Android" }
 androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" }
 androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
-
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 [bundles]
 compose = [
     "androidx-compose-runtime",
