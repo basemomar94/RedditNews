@@ -11,14 +11,13 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 internal fun Loading(modifier: Modifier = Modifier) {
-    Box(modifier = modifier.fillMaxSize()) {
-        CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-    }
+    CircularProgressIndicator(modifier = modifier)
+
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun LoadingPerview(){
+private fun LoadingPerview() {
     MaterialTheme {
         LoadingPerview()
     }

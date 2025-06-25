@@ -11,11 +11,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.bassem.presentation.PostsIntent
 import com.bassem.presentation.PostsState
 import com.bassem.presentation.PostsViewModel
 import com.bassem.presentation.mapper.getMessage
 import com.bassem.presentation.models.RedditPost
 import com.bassem.presentation.screens.common.CustomTopBar
+import com.bassem.presentation.screens.common.ErrorCompose
 import com.bassem.presentation.screens.common.Loading
 import com.bassem.presentation.screens.posts.compose.RedditPostList
 
@@ -36,7 +38,12 @@ fun PostsScreen(viewModel: PostsViewModel = hiltViewModel(), onPostClick: (Reddi
                     RedditPostList(posts = state.posts, onPostClick = onPostClick)
                 }
 
-                is PostsState.Error -> Text(text = state.message.getMessage(context))
+                is PostsState.Error -> ErrorCompose(
+                    modifier = Modifier.align(Alignment.Center),
+                    message = state.message.getMessage(context)
+                ) {
+                    viewModel.setIntent(PostsIntent.FetchPosts)
+                }
             }
         }
 

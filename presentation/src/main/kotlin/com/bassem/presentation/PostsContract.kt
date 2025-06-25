@@ -12,5 +12,4 @@ sealed class PostsState {
 
 sealed class PostsIntent {
     data object FetchPosts : PostsIntent()
-    data object NavigateToPostDetails : PostsIntent()
 }

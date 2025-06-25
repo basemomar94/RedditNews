@@ -29,7 +29,6 @@ class PostsViewModel @Inject constructor(private val fetchPostsUseCase: FetchPos
     private fun handleIntent(intent: PostsIntent) {
         when (intent) {
             PostsIntent.FetchPosts -> loadPosts()
-            PostsIntent.NavigateToPostDetails -> {}
         }
     }
 
