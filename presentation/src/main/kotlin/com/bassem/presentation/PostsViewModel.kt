@@ -2,6 +2,7 @@ package com.bassem.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bassem.presentation.mapper.mapThrowable
 import com.bassem.presentation.mapper.toUi
 import com.bassem.redditnews.domain.usecase.FetchPostsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -38,8 +39,8 @@ class PostsViewModel @Inject constructor(private val fetchPostsUseCase: FetchPos
             result.onSuccess {
                 val uiPosts = it.map { it.toUi() }
                 _postsState.value = PostsState.Success(uiPosts)
-            }.onFailure {
-
+            }.onFailure { throwable ->
+                _postsState.value = PostsState.Error(throwable.mapThrowable())
             }
 
         }
