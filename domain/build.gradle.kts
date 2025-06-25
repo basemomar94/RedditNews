@@ -7,7 +7,10 @@ android {
     namespace = "com.bassem.domain"
     compileSdk = libs.versions.compileSdk.get().toInt()
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "21"
+    }
+    kotlin {
+        jvmToolchain(21)
     }
     tasks.withType<Test> {
         useJUnitPlatform()

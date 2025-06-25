@@ -13,7 +13,10 @@ android {
         minSdk = libs.versions.minSdk.get().toInt()
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "21"
+    }
+    kotlin {
+        jvmToolchain(21)
     }
 
     testOptions {

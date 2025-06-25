@@ -8,7 +8,10 @@ android {
     namespace = "com.bassem.base"
     compileSdk = libs.versions.compileSdk.get().toInt()
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "21"
+    }
+    kotlin {
+        jvmToolchain(21)
     }
     defaultConfig{
         minSdk = libs.versions.minSdk.get().toInt()
