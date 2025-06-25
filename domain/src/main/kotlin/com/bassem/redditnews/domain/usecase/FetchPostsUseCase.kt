@@ -5,5 +5,5 @@ import javax.inject.Inject
 
 class FetchPostsUseCase @Inject constructor(private val repo: GetPostsRepo) {
 
-    operator fun invoke() = repo.getPosts()
+    suspend operator fun invoke() = repo.getPosts()
 }
