@@ -7,9 +7,6 @@ plugins {
 android {
     namespace = "com.bassem.base"
     compileSdk = libs.versions.compileSdk.get().toInt()
-    kotlinOptions {
-        jvmTarget = "21"
-    }
     kotlin {
         jvmToolchain(21)
     }

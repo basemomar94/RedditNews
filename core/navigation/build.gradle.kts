@@ -12,9 +12,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         minSdk = libs.versions.minSdk.get().toInt()
     }
-    kotlinOptions {
-        jvmTarget = "21"
-    }
     kotlin {
         jvmToolchain(21)
     }
