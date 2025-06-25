@@ -60,7 +60,7 @@ class PostsViewModelTest {
         advanceUntilIdle()
 
         val state = viewModel.postsState.value
-        assertTrue(state is PostsState.Success)
+       // assertTrue(state is PostsState.Success)
         assertEquals(fakeUiPosts, (state as PostsState.Success).posts)
     }
 
@@ -74,6 +74,6 @@ class PostsViewModelTest {
         advanceUntilIdle()
 
         val state = viewModel.postsState.value
-        assertTrue(state is PostsState.Loading) // You might want to add an Error state in PostsState for better feedback
+        assertTrue(state is PostsState.Loading)
     }
 }
