@@ -16,10 +16,10 @@ import com.bassem.presentation.PostsState
 import com.bassem.presentation.PostsViewModel
 import com.bassem.presentation.mapper.getMessage
 import com.bassem.presentation.models.RedditPost
-import com.bassem.presentation.screens.common.CustomTopBar
-import com.bassem.presentation.screens.common.ErrorCompose
-import com.bassem.presentation.screens.common.Loading
 import com.bassem.presentation.screens.posts.compose.RedditPostList
+import com.bassem.redditnews.common.CustomTopBar
+import com.bassem.redditnews.common.ErrorCompose
+import com.bassem.redditnews.common.Loading
 
 
 @Composable

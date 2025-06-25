@@ -1,4 +1,4 @@
-package com.bassem.presentation.screens.common
+package com.bassem.redditnews.common
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack

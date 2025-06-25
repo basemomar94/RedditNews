@@ -1,4 +1,4 @@
-package com.bassem.presentation.screens.common
+package com.bassem.redditnews.common
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-internal fun ErrorCompose(modifier: Modifier = Modifier, message: String, onRetry: () -> Unit) {
+fun ErrorCompose(modifier: Modifier = Modifier, message: String, onRetry: () -> Unit) {
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             text = message,

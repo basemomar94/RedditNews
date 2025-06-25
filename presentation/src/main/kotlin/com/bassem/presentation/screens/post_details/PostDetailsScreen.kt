@@ -13,8 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.bassem.presentation.models.RedditPost
-import com.bassem.presentation.screens.common.ImageCompose
-import com.bassem.presentation.screens.common.CustomTopBar
+import com.bassem.redditnews.common.CustomTopBar
+import com.bassem.redditnews.common.ImageCompose
 
 @Composable
 fun PostDetailsScreen(post: RedditPost, onBackClick: () -> Unit) {

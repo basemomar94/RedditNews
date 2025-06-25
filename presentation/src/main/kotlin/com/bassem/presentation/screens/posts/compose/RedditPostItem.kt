@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.bassem.presentation.models.RedditPost
-import com.bassem.presentation.screens.common.ImageCompose
+import com.bassem.redditnews.common.ImageCompose
 
 @Composable
 internal fun RedditPostItem(post: RedditPost, onClick: (RedditPost) -> Unit) {

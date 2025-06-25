@@ -1,4 +1,4 @@
-package com.bassem.presentation.screens.common
+package com.bassem.redditnews.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.material3.CircularProgressIndicator
