@@ -22,7 +22,7 @@ viewModelCompose = "2.9.1"
 retrofit = "3.0.0"
 version-catalog-update = "1.0.0"
 serialization = "2.2.0"
-junitJupiterParams = "5.13.2"
+junitJupiterParams = "5.10.1"
 mockkVersion = "1.14.4"
 appcompat = "1.7.1"
 uiTestJunit4Android = "1.8.3"
@@ -64,6 +64,9 @@ androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runt
 androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junitJupiterParams" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiterParams" }
+
 [bundles]
 compose = [
     "androidx-compose-runtime",
@@ -79,6 +82,15 @@ uiTest = [
     "androidx-ui-test-junit4-android",
     "androidx-ui-test-manifest",
     "androidx-compose-ui-test-junit4"
+]
+
+unitTest = [
+    "junit-jupiter-engine",
+    "junit-jupiter-api",
+    "junit-jupiter-params",
+    "mockk",
+    "kotlinx-coroutines-test"
+
 ]
 
 viewModel = [
