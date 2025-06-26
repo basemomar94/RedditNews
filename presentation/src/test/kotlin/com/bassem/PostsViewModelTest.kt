@@ -1,17 +1,25 @@
 package com.bassem
 
+import app.cash.turbine.test
 import com.bassem.presentation.PostsIntent
 import com.bassem.presentation.PostsState
 import com.bassem.presentation.PostsViewModel
+import com.bassem.presentation.mapper.mapThrowable
 import com.bassem.presentation.mapper.toUi
 import com.bassem.redditnews.domain.models.RedditPost
 import com.bassem.redditnews.domain.usecase.FetchPostsUseCase
 import io.mockk.coEvery
 import io.mockk.mockk
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.setMain
+import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import kotlin.test.Test
@@ -44,23 +52,27 @@ class PostsViewModelTest {
             id = "4",
         )
     )
-    private val fakeUiPosts = fakeDomainPosts.map { it.toUi()}
+    private val fakeUiPosts = fakeDomainPosts.map { it.toUi() }
 
     @BeforeEach
     fun setUp() {
-        viewModel = PostsViewModel(fetchPostsUseCase)
+        Dispatchers.setMain(StandardTestDispatcher())
+    }
+
+    @AfterEach
+    fun tearDown() {
+        Dispatchers.resetMain()
     }
 
     @Test
     fun `fetch posts - success`() = runTest {
         coEvery { fetchPostsUseCase() } returns flowOf(Result.success(fakeDomainPosts))
-
+        viewModel = PostsViewModel(fetchPostsUseCase)
         viewModel.setIntent(PostsIntent.FetchPosts)
 
         advanceUntilIdle()
-
-        val state = viewModel.postsState.value
-       // assertTrue(state is PostsState.Success)
+        val state = viewModel.postsState.first()
+        assertTrue(state is PostsState.Success)
         assertEquals(fakeUiPosts, (state as PostsState.Success).posts)
     }
 
@@ -68,12 +80,13 @@ class PostsViewModelTest {
     fun `fetch posts - failure`() = runTest {
         val error = RuntimeException("Something went wrong")
         coEvery { fetchPostsUseCase() } returns flowOf(Result.failure(error))
-
+        viewModel = PostsViewModel(fetchPostsUseCase)
         viewModel.setIntent(PostsIntent.FetchPosts)
 
         advanceUntilIdle()
+        val state = viewModel.postsState.first()
+        assertTrue(state is PostsState.Error)
 
-        val state = viewModel.postsState.value
-        assertTrue(state is PostsState.Loading)
+
     }
 }

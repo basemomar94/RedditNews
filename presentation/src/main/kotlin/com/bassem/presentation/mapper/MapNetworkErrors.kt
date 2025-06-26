@@ -24,7 +24,7 @@ fun ErrorTypes.getMessage(context: Context): String = when (this) {
         R.string.error_invalid_argument,
         message ?: ""
     )
-
+    is ErrorTypes.RuntimeException -> context.getString(R.string.error_runtime)
     is ErrorTypes.Unknown -> context.getString(R.string.error_unknown, message ?: "")
     is ErrorTypes.Http -> context.getString(R.string.error_http, code, message ?: "")
 }

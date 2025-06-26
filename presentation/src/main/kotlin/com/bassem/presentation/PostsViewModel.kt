@@ -22,7 +22,6 @@ class PostsViewModel @Inject constructor(private val fetchPostsUseCase: FetchPos
 
     init {
         collectIntent()
-        setIntent(PostsIntent.FetchPosts)
     }
 
 
