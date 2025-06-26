@@ -39,8 +39,6 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     ksp(libs.hilt.android.compiler)
 
-    testImplementation(libs.junit.jupiter.params)
-    testImplementation(libs.mockk)
-    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.bundles.unitTest)
     testImplementation(kotlin("test"))
 }

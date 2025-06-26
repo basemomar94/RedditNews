@@ -22,5 +22,6 @@ dependencies {
     implementation(libs.hilt.android)
 
    testImplementation(libs.bundles.unitTest)
+    testImplementation(libs.bundles.uiTest)
 
 }
