@@ -1,6 +1,6 @@
 package com.bassem.data.di
 
-import com.bassem.data.repoimp.GetRepoPostsImp
+import com.bassem.data.repoimp.GetPostsImp
 import com.bassem.redditnews.domain.repo.GetPostsRepo
 import dagger.Binds
 import dagger.Module
@@ -11,5 +11,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class RepoModule {
     @Binds
-    abstract fun bindsGetPostsModule(imp: GetRepoPostsImp): GetPostsRepo
+    abstract fun bindsGetPostsModule(imp: GetPostsImp): GetPostsRepo
 }

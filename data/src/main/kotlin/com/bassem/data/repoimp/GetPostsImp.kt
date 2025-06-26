@@ -8,12 +8,11 @@ import com.bassem.redditnews.domain.repo.GetPostsRepo
 import com.bassem.utils.Logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
-class GetRepoPostsImp @Inject constructor(
+class GetPostsImp @Inject constructor(
     private val apiService: ApiService, private val dao: RedditPostDao
 ) : GetPostsRepo {
     private val logger = Logger("GetRepoPostsImp")
