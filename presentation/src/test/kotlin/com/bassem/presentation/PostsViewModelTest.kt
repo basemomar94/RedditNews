@@ -1,10 +1,5 @@
-package com.bassem
+package com.bassem.presentation
 
-import app.cash.turbine.test
-import com.bassem.presentation.PostsIntent
-import com.bassem.presentation.PostsState
-import com.bassem.presentation.PostsViewModel
-import com.bassem.presentation.mapper.mapThrowable
 import com.bassem.presentation.mapper.toUi
 import com.bassem.redditnews.domain.models.RedditPost
 import com.bassem.redditnews.domain.usecase.FetchPostsUseCase
@@ -20,7 +15,7 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
 import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -72,7 +67,7 @@ class PostsViewModelTest {
 
         advanceUntilIdle()
         val state = viewModel.postsState.first()
-        assertTrue(state is PostsState.Success)
+        Assertions.assertTrue(state is PostsState.Success)
         assertEquals(fakeUiPosts, (state as PostsState.Success).posts)
     }
 
@@ -85,7 +80,7 @@ class PostsViewModelTest {
 
         advanceUntilIdle()
         val state = viewModel.postsState.first()
-        assertTrue(state is PostsState.Error)
+        Assertions.assertTrue(state is PostsState.Error)
 
 
     }
