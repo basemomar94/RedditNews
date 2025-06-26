@@ -42,6 +42,7 @@ dependencies {
     api(libs.bundles.compose)
 
     api(libs.glide)
+    implementation(libs.androidx.ui.test.junit4.android)
     androidTestImplementation(libs.bundles.uiTest)
     testImplementation(kotlin("test"))
 }
