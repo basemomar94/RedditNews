@@ -21,8 +21,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.hilt.android)
 
-    testImplementation(libs.junit.jupiter.params)
-    testImplementation(libs.mockk)
-    testImplementation(libs.kotlinx.coroutines.test)
+   testImplementation(libs.bundles.unitTest)
 
 }
